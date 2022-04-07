@@ -1,9 +1,10 @@
+// Class represent a singing bird as a pet 
+// The bird contains a sing method as the unique method and the ownerField 
+public class SingingBird extends Birds implements Cloneable{
 
-public class SingingBird extends Birds{
-
-	private Owner owner;
+	public Owner owner;
 	
-	
+	// constructor of singing bird - also creates the owner Object
 	public SingingBird(int age, String name, String color, String nameOfOwner, String phoneOfOwner) {
 		super(age, name, color);
 		owner = new Owner(nameOfOwner, phoneOfOwner);
@@ -30,7 +31,7 @@ public class SingingBird extends Birds{
 		System.out.println("Please open the cage to let me fly");	
 	}
 	
-	// Equals
+	// Equals override
 	@Override
 	public boolean equals(Object obj) {
 		
@@ -40,9 +41,26 @@ public class SingingBird extends Birds{
 		return super.equals(obj);
 	}
 	
+	
 	// Private Method
 	// Will print message of Singing
 	public void sing() {
 		System.out.println("Sing - Lalalala");
 	}
+
+	
+	// The Clone method from the Cloneable interface - override to to apply the deep copy
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		
+		// Clone the current singingBird
+		SingingBird singB = (SingingBird)super.clone();
+		
+		// Clone the owner object itself
+		singB.owner = (Owner)owner.clone();
+		
+		// return the deep copy object
+		return singB;
+	}
+
 }

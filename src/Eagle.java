@@ -1,11 +1,10 @@
-
+// Class represent a Eagle 
+// The Eagle contains the hunt method as the unique method
 public class Eagle extends Birds{
 	
-	
-	
+	// constructor
 	public Eagle(int age, String name, String color) {
 		super(age, name, color);
-
 	}
 	
 	// Return the full String of an eagle

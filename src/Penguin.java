@@ -1,7 +1,8 @@
-
+// Class represent a Penguin 
+// The Penguin contains a cuddle method as the unique method
 public class Penguin extends Birds{
 	
-	
+	// constructor
 	public Penguin(int age, String name, String color) {
 		super(age, name, color);
 	}

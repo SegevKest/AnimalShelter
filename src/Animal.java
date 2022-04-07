@@ -1,4 +1,6 @@
 
+// This is the main class of the Hierarchy of Animals
+// This is abstract class, with all attributes for the subclasses
 public abstract class Animal implements Cloneable{
 	
 	protected int _age;
@@ -6,7 +8,7 @@ public abstract class Animal implements Cloneable{
 	protected String _color;
 	
 	
-	
+	// Constructor
 	public Animal(int age, String name, String color) {
 		_age = age;
 		_name = name;
@@ -25,7 +27,7 @@ public abstract class Animal implements Cloneable{
 		return super.clone();
 	}
 	
-	// Equals
+	// Equals override
 	@Override
 	public boolean equals(Object obj) {
 		
@@ -67,7 +69,7 @@ public abstract class Animal implements Cloneable{
 	}
 	
 	
-	//Sleep and Eat methods - to implement while inherting from Animal class
+	//Sleep and Eat methods - to implement while inheriting from Animal class
 	public abstract void sleep();
 	public abstract void eat();
 	

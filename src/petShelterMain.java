@@ -11,26 +11,33 @@ public class petShelterMain {
 		
 		// Create all objects of animals
 		Eagle eagle1 = new Eagle(1,"Eagy","black");
-		Penguin ping = new Penguin(2,"Pengi","yellow");
-		SingingBird singBird = new SingingBird(3,"Dolli","Red", "Segev","09-8765432");
+		Penguin ping = new Penguin(2,"Pengi","Yellow and white");
+		SingingBird singBird = new SingingBird(3,"Dolli","Red", "Taki","09-8765432");
 		
+		
+		// Clone - Part C in the First Question
 		// the new eagle object - after the clone
-		Eagle eagle2 = null;
+		SingingBird singBird2 = null;
 		
 		try {
-			eagle2 = (Eagle)eagle1.clone();
+			singBird2 = (SingingBird)singBird.clone();
 			
 			// If the clone was successfull - display the new object and its origin
-			System.out.println("Origin Animal Object -> "+eagle1.toString());
-			System.out.println("Clone of original Animal -> "+eagle2.toString());
+			System.out.println("Before editing the fields of the cloned");
+			System.out.println("Origin Animal -> "+singBird.toString());
+			System.out.println("Clone Animal -> "+singBird2.toString());
 			
-			eagle2.setName("Davi");
-			eagle2.setColor("Shoko");
-			eagle2.setAge(15);
-			
+			// Edit the fields of the cloned object
+			singBird2.setName("Soundy");
+			singBird2.setColor("Green");
+			singBird2.setAge(15);
+			singBird2.owner.setNameOfOwner("Segev");
+			singBird2.owner.setPhoneNumberOfOwner("052");
+
 			// If the clone was successfull - display the new object and its origin
-			System.out.println("Origin Animal -> "+eagle1.toString());
-			System.out.println("Clone of original, after modifications -> "+eagle2.toString());
+			System.out.println("After editing cloned fields");
+			System.out.println("Origin Animal -> "+singBird.toString());
+			System.out.println("Clone of original, after modifications -> "+singBird2.toString());
 						
 		} catch (CloneNotSupportedException e) {};
 		 
@@ -39,7 +46,7 @@ public class petShelterMain {
 		shelter.add(eagle1);
 		shelter.add(ping);
 		shelter.add(singBird);
-		shelter.add(eagle2);
+		shelter.add(singBird2);
 		
 		
 		System.out.println("\nOur Shelter\n");
